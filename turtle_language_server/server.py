@@ -27,7 +27,6 @@ COUNT_DOWN_SLEEP_IN_SECONDS = 1
 
 logging.basicConfig(filemode='w', level=logging.DEBUG)
 
-
 class TurtleLanguageServer(LanguageServer):
     CMD_COUNT_DOWN_BLOCKING = 'countDownBlocking'
     CMD_COUNT_DOWN_NON_BLOCKING = 'countDownNonBlocking'
@@ -79,7 +78,7 @@ def load_stuff(ls: TurtleLanguageServer, *args):
             continue
 
 
-def _validate(ls, params):
+def _validate(ls: TurtleLanguageServer, params):
     ls.show_message_log('Validating turtle...')
 
     text_doc = ls.workspace.get_document(params.textDocument.uri)
@@ -90,7 +89,7 @@ def _validate(ls, params):
     ls.publish_diagnostics(text_doc.uri, diagnostics)
 
 
-def _validate_ttl(source):
+def _validate_ttl(source: str):
     diagnostics = []
     try:
         g = rdflib.Graph()

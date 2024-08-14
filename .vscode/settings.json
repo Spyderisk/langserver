@@ -1,0 +1,26 @@
+{
+    "[plaintext]": {
+        // Uncomment to enable `textDocument/onTypeFormatting` requests
+        // "editor.formatOnType": true
+    },
+    // Uncomment to override Python interpreter used.
+    // "pygls.server.pythonPath": "/path/to/python",
+    "pygls.server.debug": false,
+    // "pygls.server.debugHost": "localhost",
+    "pygls.server.debugPort": 8080,
+    "pygls.server.launchScript": "entry.py", // This is relative to `pygls.server.cwd`
+    "pygls.server.cwd": "PATH_GOES_HERE/langserver/turtle_language_server",
+    "pygls.trace.server": "messages",
+    "pygls.client.documentSelector": [
+        
+        {
+            "scheme": "file",
+            "language": "plaintext"
+        },
+        {
+            "language": "turtle",
+            "scheme": "*.n3"
+        }
+    ],
+    // "pygls.jsonServer.exampleConfiguration": "some value here",
+}
